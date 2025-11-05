@@ -95,9 +95,9 @@ public class SiardFromDb {
         System.out.println("  -h (help)            prints this usage information");
         System.out.println("  -o (overwrite)       overwrite existing siard file");
         System.out.println("  -v (views as tables) archive views as tables");
-        System.out.println("  --no-privileges      omit privileges from archive metadata.xml");
-        System.out.println("  --no-users           omit users from archive metadata.xml");
-        System.out.println("  --no-roles           omit roles from archive metadata.xml");
+        System.out.println("  --noprivileges       omit privileges from archive metadata.xml");
+        System.out.println("  --nousers            omit users from archive metadata.xml");
+        System.out.println("  --noroles            omit roles from archive metadata.xml");
         System.out.println("  <login timeout>      login timeout in seconds (default: " + _iLoginTimeoutSeconds + "), 0 for unlimited");
         System.out.println("  <query timeout>      query timeout in seconds (default: " + _iQueryTimeoutSeconds + "), 0 for unlimited");
         System.out.println("  <import xml>         name of meta data XML file to be used as a template");
@@ -134,9 +134,9 @@ public class SiardFromDb {
         if (args.getOption("o") != null) _bOverwrite = true;
         /* views as tables */
         if (args.getOption("v") != null) _bViewsAsTables = true;
-        if (args.getOption("no-privileges") != null) _bPrivileges = false;
-        if (args.getOption("no-users") != null) _bUsers = false;
-        if (args.getOption("no-roles") != null) _bRoles = false;
+        if (args.getOption("noprivileges") != null) _bPrivileges = false;
+        if (args.getOption("nousers") != null)  _bUsers = false;
+        if (args.getOption("noroles") != null)  _bRoles = false;
         /* login time out */
         String sLoginTimeoutSeconds = args.getOption("l");
         /* query time out */
